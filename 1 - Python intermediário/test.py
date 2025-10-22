@@ -7,6 +7,3 @@ plt.title("Sample Plot")
 plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
-
-
-matrix = [[col, row for ]]

@@ -1,6 +1,6 @@
 # Import cars data
 import pandas as pd
-cars = pd.read_csv('cars.csv', index_col = 0)
+cars = pd.read_csv('C:\\Users\\reich\\Downloads\\datacamp-associate-data-scientist\\1 - Python intermediário\\cars.csv', index_col=0)
 
 # Print out drives_right column as Series
 print(cars.iloc[:, 2])

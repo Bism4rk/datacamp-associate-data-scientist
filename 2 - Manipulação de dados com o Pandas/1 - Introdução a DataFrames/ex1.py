@@ -1,6 +1,6 @@
 import pandas as pd
 
-homelessness = pd.read_csv('https://raw.githubusercontent.com/curso-r/Manipulacao-de-dados-com-Pandas/main/dados/homelessness.csv') # doesn't actually work, just here so that VS Code doesn't complain
+homelessness = pd.read_csv('C:\\Users\\reich\\Downloads\\datacamp-associate-data-scientist\\2 - Manipulação de dados com o Pandas\\2 - Classificação e criação de subconjuntos\\homelessness.csv') # actually works now
 
 # Print the head of the homelessness data
 print(homelessness.head())

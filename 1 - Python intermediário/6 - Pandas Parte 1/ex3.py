@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Import the cars.csv data: cars
-cars = pd.read_csv('cars.csv')
+cars = pd.read_csv('C:\\Users\\reich\\Downloads\\datacamp-associate-data-scientist\\1 - Python intermediário\\cars.csv')
 
 # Print out cars
 print(cars)

@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+restaurant_groups = pd.read_csv('C:\\Users\\reich\\Downloads\\datacamp-associate-data-scientist\\4 - Introdução a estatísticas em Python\\restaurant_groups.csv')
+
+# Create a histogram of restaurant_groups and show plot
+restaurant_groups['group_size'].hist(bins=[2,3,4,5,6])
+# plt.show()
+
+# Create probability distribution
+size_dist = restaurant_groups['group_size'].value_counts() / restaurant_groups.shape[0]
+# Reset index and rename columns
+size_dist = size_dist.reset_index()
+size_dist.columns = ['group_size', 'prob']
+
+# Expected value
+expected_value = np.sum(size_dist['group_size'] * size_dist['prob'])
+
+# Subset groups of size 4 or more
+groups_4_or_more = size_dist[size_dist['group_size'] >= 4]
+
+# Sum the probabilities of groups_4_or_more
+prob_4_or_more = np.sum(groups_4_or_more['prob'])
+print(prob_4_or_more)
+
+'''
+O código acima demonstra como criar uma distribuição de probabilidade para o tamanho dos grupos de restaurantes a partir do conjunto de dados "restaurant_groups". Primeiro, ele cria um histograma para visualizar a distribuição dos tamanhos dos grupos. Em seguida, calcula a distribuição de probabilidade dividindo a contagem de cada tamanho de grupo pelo total de registros. O valor esperado do tamanho do grupo é então calculado como a soma ponderada dos tamanhos dos grupos pelas suas respectivas probabilidades. Finalmente, o código filtra os grupos com tamanho 4 ou mais e soma suas probabilidades, imprimindo o resultado.
+'''

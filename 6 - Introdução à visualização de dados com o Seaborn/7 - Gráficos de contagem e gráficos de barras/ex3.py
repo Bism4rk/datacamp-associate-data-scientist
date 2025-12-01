@@ -1,0 +1,36 @@
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+student_data = pd.read_csv('C:\\Users\\reich\\Downloads\\datacamp-associate-data-scientist\\6 - Introdução à visualização de dados com o Seaborn\\student_data.csv')
+
+
+# Create bar plot of average final grade in each study category
+sns.catplot(x='study_time', y='G3', data=student_data ,kind='bar')
+
+# Show plot
+plt.show()
+
+# List of categories from lowest to highest
+category_order = ["<2 hours", 
+                  "2 to 5 hours", 
+                  "5 to 10 hours", 
+                  ">10 hours"]
+
+# Rearrange the categories
+sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="bar", order=category_order)
+
+# Show plot
+plt.show()
+
+# Turn off the confidence intervals
+sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="bar",
+            order=category_order, ci=None)
+
+# Show plot
+plt.show()
